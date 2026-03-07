@@ -158,7 +158,7 @@ publishing {
 //            }
 //        }
 //    }
-}
+//}
 
 signing {
     isRequired = true

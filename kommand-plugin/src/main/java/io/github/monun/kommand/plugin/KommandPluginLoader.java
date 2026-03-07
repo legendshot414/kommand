@@ -28,11 +28,11 @@ public class KommandPluginLoader implements PluginLoader {
 
             // check kotlin is shadowed
             if (isRequire("kotlin.KotlinVersion")) {
-                resolver.addDependency(new Dependency(new DefaultArtifact("org.jetbrains.kotlin:kotlin-stdlib:1.8.22"), null));
+                resolver.addDependency(new Dependency(new DefaultArtifact("org.jetbrains.kotlin:kotlin-stdlib:1.9.23"), null));
             }
             // check kotlin reflect is shadowed
             if (isRequire("kotlin.reflect.KClass")) {
-                resolver.addDependency(new Dependency(new DefaultArtifact("org.jetbrains.kotlin:kotlin-reflect:1.8.22"), null));
+                resolver.addDependency(new Dependency(new DefaultArtifact("org.jetbrains.kotlin:kotlin-reflect:1.9.23"), null));
             }
 
             classpathBuilder.addLibrary(resolver);
