@@ -15,4 +15,4 @@ file(dongle).listFiles()?.filter {
 }
 
 include("$prefix-plugin")
-//include("$prefix-publish")
+include("$prefix-publish")
