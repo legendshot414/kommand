@@ -2,7 +2,7 @@ rootProject.name = "kommand"
 
 val prefix = rootProject.name
 
-include("$prefix-api", "$prefix-core")
+include("$prefix-api", "$prefix-core", "$prefix-plugin")
 
 
 val dongle = "$prefix-dongle"
@@ -14,5 +14,5 @@ file(dongle).listFiles()?.filter {
     include(":$dongle:${file.name}")
 }
 
-include("$prefix-plugin")
-include("$prefix-publish")
+val publish = "$prefix-publish"
+if (file(publish).exists()) include(publish)
