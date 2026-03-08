@@ -3,17 +3,14 @@ plugins {
 }
 
 tasks {
-    create<Jar>("sourcesJar") {
+    register<Jar>("sourcesJar") {
         archiveClassifier.set("sources")
         from(sourceSets["main"].allSource)
     }
 
-    create<Jar>("dokkaJar") {
+    register<Jar>("dokkaJar") {
         archiveClassifier.set("javadoc")
         dependsOn("dokkaHtml")
-
-        from("$buildDir/dokka/html/") {
-            include("**")
-        }
+        from(layout.buildDirectory.dir("dokka/html"))
     }
 }

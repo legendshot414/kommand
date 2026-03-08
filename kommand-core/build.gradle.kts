@@ -7,29 +7,26 @@ dependencies {
 }
 
 tasks {
-    jar{
+    jar {
         archiveClassifier.set("origin")
     }
 
-    register<Jar>("coredevJar") {
+    register<Jar>("coreDevJar") {
         from(sourceSets["main"].output)
     }
 
-    register<Jar>("corereobfJar") {
+    register<Jar>("coreReobfJar") {
         from(sourceSets["main"].output)
     }
 
-    create<Jar>("sourcesJar") {
+    register<Jar>("sourcesJar") {
         archiveClassifier.set("sources")
         from(sourceSets["main"].allSource)
     }
 
-    create<Jar>("dokkaJar") {
+    register<Jar>("dokkaJar") {
         archiveClassifier.set("javadoc")
         dependsOn("dokkaHtml")
-
-        from("$buildDir/dokka/html/") {
-            include("**")
-        }
+        from(layout.buildDirectory.dir("dokka/html"))
     }
 }

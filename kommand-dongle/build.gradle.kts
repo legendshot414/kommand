@@ -13,3 +13,15 @@ subprojects {
         paperweight.paperDevBundle("${name.substring(1)}-R0.1-SNAPSHOT")
     }
 }
+
+coreDevJar {
+    from(subprojects.map { it.sourceSets["main"].output })
+}
+
+coreReobfJar {
+    from(subprojects.map { it.sourceSets["main"].output })
+}
+
+coreSourcesJar {
+    from(subprojects.map { it.sourceSets["main"].allSource })
+}

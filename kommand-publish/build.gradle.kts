@@ -3,7 +3,7 @@ plugins {
     signing
 }
 
-projectPlugin.tasks.named("clipPluginJar") {
+projectPlugin.tasks.named("clipJar") {
     dependsOn(tasks.named("publishApiPublicationToServerRepository"))
     dependsOn(tasks.named("publishCorePublicationToServerRepository"))
 }
@@ -83,7 +83,7 @@ publishing {
 
         create<MavenPublication>("core") {
             setup(projectCore)
-            artifact(projectCore.tasks["corereobfJar"])
+            artifact(projectCore.tasks["coreReobfJar"])
         }
 
     }
